@@ -1,0 +1,13 @@
+.editorconfig
+.env
+.env.example
+*pem
+*.md
+docker-compose.yml
+secrets/
+test/
+vendor/
+bootstrap/cache/*.php
+storage/logs/*.log
+storage/sessions/*
+storage/cache/data/*
