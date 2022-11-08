@@ -5,15 +5,16 @@ ARG SWOOLE_VERSION=4.8
 FROM composer:${COMPOSER_VERSION} AS dockyard
 WORKDIR /app
 COPY . .
-RUN composer install \
-    --ignore-platform-reqs \
-    --no-interaction \
-    --no-progress \
-    --no-ansi \
-    --no-dev \
-    --prefer-dist \
-    --optimize-autoloader \
-    --no-scripts
+# RUN composer install \
+#   --ignore-platform-reqs \
+#   --no-interaction \
+#   --no-progress \
+#   --no-ansi \
+#   --no-dev \
+#   --prefer-dist \
+#   --optimize-autoloader \
+#   --no-scripts
+RUN composer install
 
 FROM phpswoole/swoole:${SWOOLE_VERSION}-php${PHP_VERSION}-alpine
 RUN apk --no-cache upgrade && \
