@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Shared\Infrastructure\Laravel\Models\User;
+use App\Shared\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

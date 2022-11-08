@@ -189,11 +189,12 @@ return [
         /*
          * Application Service Providers...
          */
-        \App\Shared\Infrastructure\Laravel\Providers\AppServiceProvider::class,
-        \App\Shared\Infrastructure\Laravel\Providers\AuthServiceProvider::class,
+        \App\Shared\Providers\AppServiceProvider::class,
+        \App\Shared\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        \App\Shared\Infrastructure\Laravel\Providers\EventServiceProvider::class,
-        \App\Shared\Infrastructure\Laravel\Providers\RouteServiceProvider::class,
+        \App\Shared\Providers\EventServiceProvider::class,
+        \App\Shared\Providers\RouteServiceProvider::class,
+        \App\Shared\Providers\CharacterServiceProvider::class,
 
     ],
 
