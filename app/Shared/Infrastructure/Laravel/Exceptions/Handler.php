@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Laravel\Exceptions;
+namespace App\Shared\Infrastructure\Laravel\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;

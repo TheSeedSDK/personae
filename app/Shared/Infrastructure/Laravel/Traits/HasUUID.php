@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Laravel\Traits;
+namespace App\Shared\Infrastructure\Laravel\Traits;
 
 use Illuminate\Support\Str;
 
