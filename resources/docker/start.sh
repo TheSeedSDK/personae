@@ -31,8 +31,8 @@ fi
 
 if [[ ! -f "/app/storage/initialized" ]]; then
     # php artisan passport:keys
-    # php artisan migrate
-    # php artisan db:seed
+    php artisan migrate
+    php artisan db:seed
     # create the initialized file
     date >/app/storage/initialized
 fi
