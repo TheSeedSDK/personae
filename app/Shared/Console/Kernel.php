@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Shared\Infrastructure\Laravel\Console;
+namespace App\Shared\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

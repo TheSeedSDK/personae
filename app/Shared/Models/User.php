@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Shared\Infrastructure\Laravel\Models;
+namespace App\Shared\Models;
 
-use App\Shared\Infrastructure\Laravel\Traits\HasUUID;
+use App\Shared\Traits\HasUUID;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;

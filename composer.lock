@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8d0a5799e39d9b83d904ac56b313f5f",
+    "content-hash": "136b343b9aa5670521357ca178d2344a",
     "packages": [
         {
             "name": "brick/math",
@@ -101,6 +101,52 @@
                 "source": "https://github.com/ComplexHeart/php-contracts/tree/v1.0.0"
             },
             "time": "2022-05-23T08:49:19+00:00"
+        },
+        {
+            "name": "complex-heart/criteria",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ComplexHeart/php-criteria.git",
+                "reference": "07690d18132d4f22985667517d7c2b41b195f32f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ComplexHeart/php-criteria/zipball/07690d18132d4f22985667517d7c2b41b195f32f",
+                "reference": "07690d18132d4f22985667517d7c2b41b195f32f",
+                "shasum": ""
+            },
+            "require": {
+                "complex-heart/domain-model": "^2.0.0",
+                "ext-json": "*",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "pestphp/pest": "^1.4",
+                "phpstan/phpstan": "^1.9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ComplexHeart\\Domain\\Criteria\\": "src/Domain/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Unay Santisteban",
+                    "email": "usantisteban@othercode.es"
+                }
+            ],
+            "description": "Small implementation of a filter criteria pattern in PHP for Complex Heart SDK. Compose several filters using fluent interface.",
+            "support": {
+                "issues": "https://github.com/ComplexHeart/php-criteria/issues",
+                "source": "https://github.com/ComplexHeart/php-criteria/tree/v2.0.0"
+            },
+            "time": "2022-11-12T00:28:14+00:00"
         },
         {
             "name": "complex-heart/domain-model",

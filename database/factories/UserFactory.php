@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Shared\Infrastructure\Laravel\Models\User;
+use App\Shared\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
