@@ -1,21 +1,12 @@
 <?php
 
-namespace Tests\Feature;
+declare(strict_types=1);
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+use function Pest\Laravel\get;
 
-class ExampleTest extends TestCase
-{
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function test_the_application_returns_a_successful_response()
-    {
-        $response = $this->get('/');
+it('has a welcome page', function () {
+    get('/')->assertStatus(200);
 
-        $response->assertStatus(200);
-    }
-}
+    // Same as:
+    $this->get('/')->assertStatus(200);
+});
