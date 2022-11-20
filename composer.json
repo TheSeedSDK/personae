@@ -31,10 +31,9 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "TheSeed\\": "src/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/",
-            "TheSeed\\Shared\\": "core/shared/",
-            "TheSeed\\Characters\\": "core/characters/"
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
