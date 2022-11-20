@@ -181,21 +181,14 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        /* Package Service Providers... */
 
-        /*
-         * Package Service Providers...
-         */
-
-        /*
-         * Application Service Providers...
-         */
+        /* Application Service Providers... */
         \App\Shared\Providers\AppServiceProvider::class,
         \App\Shared\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         \App\Shared\Providers\EventServiceProvider::class,
         \App\Shared\Providers\RouteServiceProvider::class,
-        \App\Shared\Providers\CharacterServiceProvider::class,
-
     ],
 
     /*
