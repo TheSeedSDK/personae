@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+use TheSeed\Characters\Characters\Domain\Contracts\CharacterRepository;
+use TheSeed\Characters\Characters\Domain\Contracts\CharacterSource;
+
+use TheSeed\Characters\Characters\Domain\Sections;
+
+use function Lambdish\Phunctional\map;
+use function Pest\Faker\faker;
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -39,7 +49,37 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+/**
+ * Create a new CharacterSource from an array.
+ *
+ * @param  array<string, mixed>  $data
+ * @return CharacterSource
+ */
+function makeCharacterSource(array $data = []): CharacterSource
 {
-    // ..
+    return mock(CharacterSource::class)->expect(...map(function (mixed $value) {
+        return fn() => $value;
+    }, array_merge([
+        'id' => $id = faker()->uuid(),
+        'player' => faker()->uuid(),
+        'name' => faker()->name(),
+        'sections' => [
+            Sections::CONCEPT => $id,
+            Sections::ATTRIBUTE_SET => $id,
+            Sections::ABILITY_SET => $id,
+            Sections::ADVANTAGE_SET => $id,
+        ]
+    ], $data)));
+}
+
+/**
+ * Create a fake Character repository using an array to hold
+ * the required functions to be executed on each method.
+ *
+ * @param  array<string, Closure>  $operations
+ * @return CharacterRepository
+ */
+function makeCharacterRepository(array $operations = []): CharacterRepository
+{
+    return mock(CharacterRepository::class)->expect(...$operations);
 }
