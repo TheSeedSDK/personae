@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use TheSeed\Characters\Characters\Domain\Contracts\CharacterRepository;
 use TheSeed\Characters\Characters\Domain\Contracts\CharacterSource;
+use TheSeed\Characters\Concepts\Domain\Contracts\ConceptRepository;
+use TheSeed\Characters\Concepts\Domain\Contracts\ConceptSource;
 
 use TheSeed\Characters\Characters\Domain\Sections;
 
@@ -82,4 +84,36 @@ function makeCharacterSource(array $data = []): CharacterSource
 function makeCharacterRepository(array $operations = []): CharacterRepository
 {
     return mock(CharacterRepository::class)->expect(...$operations);
+}
+
+/**
+ * Create a new ConceptSource from an array.
+ *
+ * @param  array<string, mixed>  $data
+ * @return ConceptSource
+ */
+function makeConceptSource(array $data = []): ConceptSource
+{
+    return mock(ConceptSource::class)->expect(...map(function (mixed $value) {
+        return fn() => $value;
+    }, array_merge([
+        'id' => faker()->uuid(),
+        'race' => 'human',
+        'condition' => ['none'],
+        'demeanor' => 'Some demeanor.',
+        'nature' => 'Some nature',
+        'motivation' => 'Some motivation.',
+    ], $data)));
+}
+
+/**
+ * Create a fake Concept repository using an array to hold
+ * the required functions to be executed on each method.
+ *
+ * @param  array<string, Closure>  $operations
+ * @return ConceptRepository
+ */
+function makeConceptRepository(array $operations = []): ConceptRepository
+{
+    return mock(ConceptRepository::class)->expect(...$operations);
 }
