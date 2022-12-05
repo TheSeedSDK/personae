@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use TheSeed\Characters\AttributeSets\Domain\Contracts\AttributeSetRepository;
+use TheSeed\Characters\AttributeSets\Domain\Contracts\AttributeSetSource;
 use TheSeed\Characters\Characters\Domain\Contracts\CharacterRepository;
 use TheSeed\Characters\Characters\Domain\Contracts\CharacterSource;
 use TheSeed\Characters\Concepts\Domain\Contracts\ConceptRepository;
@@ -116,4 +118,40 @@ function makeConceptSource(array $data = []): ConceptSource
 function makeConceptRepository(array $operations = []): ConceptRepository
 {
     return mock(ConceptRepository::class)->expect(...$operations);
+}
+
+/**
+ * Create a new AttributeSetSource from an array.
+ *
+ * @param  array<string, mixed>  $data
+ * @return AttributeSetSource
+ */
+function makeAttributeSetSource(array $data = []): AttributeSetSource
+{
+    return mock(AttributeSetSource::class)->expect(...map(function (mixed $value) {
+        return fn() => $value;
+    }, array_merge([
+        'id' => faker()->uuid(),
+        'physicalStrength' => faker()->numberBetween(1, 5),
+        'physicalAgility' => faker()->numberBetween(1, 5),
+        'physicalEndurance' => faker()->numberBetween(1, 5),
+        'socialCharisma' => faker()->numberBetween(1, 5),
+        'socialManipulation' => faker()->numberBetween(1, 5),
+        'socialAppearance' => faker()->numberBetween(1, 5),
+        'mentalPerception' => faker()->numberBetween(1, 5),
+        'mentalIntelligence' => faker()->numberBetween(1, 5),
+        'mentalWits' => faker()->numberBetween(1, 5),
+    ], $data)));
+}
+
+/**
+ * Create a fake AttributeSet repository using an array to hold
+ * the required functions to be executed on each method.
+ *
+ * @param  array  $operations
+ * @return AttributeSetRepository
+ */
+function makeAttributeSetRepository(array $operations = []): AttributeSetRepository
+{
+    return mock(AttributeSetRepository::class)->expect(...$operations);
 }
